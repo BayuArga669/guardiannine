@@ -12,21 +12,6 @@ const currentYear = new Date().getFullYear();
         <p>Meningkatkan performa atletik melalui desain dan teknologi. Berbasis di Sidoarjo, melayani pengiriman seluruh Indonesia.</p>
       </div>
 
-      <nav class="links" aria-labelledby="footer-shop-heading">
-        <h4 id="footer-shop-heading">Belanja</h4>
-        <a href="#collection">Terbaru</a>
-        <a href="#collection">Terlaris</a>
-        <a href="#collection">Aksesoris</a>
-        <a href="#collection">Pesanan Tim</a>
-      </nav>
-
-      <nav class="links" aria-labelledby="footer-support-heading">
-        <h4 id="footer-support-heading">Bantuan</h4>
-        <a href="#features">Panduan Ukuran</a>
-        <a href="#features">Pengembalian</a>
-        <a href="#features">Pengiriman</a>
-        <a href="#testimonials">Hubungi Kami</a>
-      </nav>
 
       <div class="location" aria-labelledby="footer-location-heading">
         <h4 id="footer-location-heading">Lokasi Kami</h4>
@@ -48,15 +33,6 @@ const currentYear = new Date().getFullYear();
         </div>
       </div>
 
-      <div class="newsletter">
-        <h4 id="newsletter-heading">Tetap Terdepan</h4>
-        <p>Langganan untuk rilis eksklusif.</p>
-        <form class="subscribe-form" aria-labelledby="newsletter-heading">
-          <label for="email-input" class="visually-hidden">Alamat Email</label>
-          <input type="email" id="email-input" placeholder="Masukkan email Anda" autocomplete="email" required />
-          <button type="submit" class="btn btn-sm">Gabung</button>
-        </form>
-      </div>
     </div>
 
     <div class="footer-bottom">
@@ -106,7 +82,7 @@ const currentYear = new Date().getFullYear();
     max-width: 250px;
   }
 
-  .links h4, .newsletter h4, .location h4 {
+  .location h4 {
     font-size: 1.2rem;
     color: #fff;
     margin-bottom: 1.5rem;
@@ -121,41 +97,6 @@ const currentYear = new Date().getFullYear();
   
   .address-text strong {
     color: #fff;
-  }
-
-  .links a {
-    display: block;
-    color: var(--color-text-muted);
-    margin-bottom: 0.8rem;
-    transition: color 0.3s;
-  }
-
-  .links a:hover,
-  .links a:focus {
-    color: var(--color-primary);
-  }
-
-  .subscribe-form {
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .subscribe-form input {
-    background: #1a1a1a;
-    border: 1px solid var(--color-border);
-    padding: 0.6rem 1rem;
-    color: #fff;
-    border-radius: 4px;
-    flex: 1;
-    min-width: 150px;
-  }
-
-  .subscribe-form input:focus {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
-    border-color: var(--color-primary);
   }
 
   .visually-hidden {
@@ -184,12 +125,8 @@ const currentYear = new Date().getFullYear();
   }
 
   @media (max-width: 768px) {
-    .subscribe-form {
-      flex-direction: column;
-    }
-    
-    .btn-sm {
-      width: 100%;
+    .footer-content {
+      grid-template-columns: 1fr;
     }
   }
 </style>
