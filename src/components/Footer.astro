@@ -28,6 +28,26 @@ const currentYear = new Date().getFullYear();
         <a href="#testimonials">Hubungi Kami</a>
       </nav>
 
+      <div class="location" aria-labelledby="footer-location-heading">
+        <h4 id="footer-location-heading">Lokasi Kami</h4>
+        <address class="address-text">
+          <p><strong>Jersey Kaos Guardian Nine Apparel</strong></p>
+          <p>Sidoarjo, Jawa Timur</p>
+        </address>
+        <div class="map-container">
+          <iframe 
+            src="https://maps.google.com/maps?q=Jersey%20kaos%20Guardian%20Nine%20Apparel%20Sidoarjo&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+            title="Lokasi Guardian.Nine di Google Maps"
+            width="100%" 
+            height="150" 
+            style="border:0; border-radius: 4px; margin-top: 1rem;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
       <div class="newsletter">
         <h4 id="newsletter-heading">Tetap Terdepan</h4>
         <p>Langganan untuk rilis eksklusif.</p>
@@ -86,10 +106,21 @@ const currentYear = new Date().getFullYear();
     max-width: 250px;
   }
 
-  .links h4, .newsletter h4 {
+  .links h4, .newsletter h4, .location h4 {
     font-size: 1.2rem;
     color: #fff;
     margin-bottom: 1.5rem;
+  }
+
+  .address-text {
+    font-style: normal;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+  
+  .address-text strong {
+    color: #fff;
   }
 
   .links a {
