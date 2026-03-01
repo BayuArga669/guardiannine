@@ -1,0 +1,164 @@
+---
+const currentYear = new Date().getFullYear();
+---
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-content">
+      <div class="brand">
+        <a href="/" class="logo" aria-label="Guardian.Nine - Beranda">
+          <img src="/images/Logo.png" alt="Guardian.Nine Logo" class="logo-icon" style="height: 48px; width: auto; max-width: 100%; object-fit: contain;" />
+          <span class="logo-text">GUARDIAN.<span class="text-primary">NINE</span></span>
+        </a>
+        <p>Meningkatkan performa atletik melalui desain dan teknologi.</p>
+      </div>
+
+      <nav class="links" aria-labelledby="footer-shop-heading">
+        <h4 id="footer-shop-heading">Belanja</h4>
+        <a href="#collection">Terbaru</a>
+        <a href="#collection">Terlaris</a>
+        <a href="#collection">Aksesoris</a>
+        <a href="#collection">Pesanan Tim</a>
+      </nav>
+
+      <nav class="links" aria-labelledby="footer-support-heading">
+        <h4 id="footer-support-heading">Bantuan</h4>
+        <a href="#features">Panduan Ukuran</a>
+        <a href="#features">Pengembalian</a>
+        <a href="#features">Pengiriman</a>
+        <a href="#testimonials">Hubungi Kami</a>
+      </nav>
+
+      <div class="newsletter">
+        <h4 id="newsletter-heading">Tetap Terdepan</h4>
+        <p>Langganan untuk rilis eksklusif.</p>
+        <form class="subscribe-form" aria-labelledby="newsletter-heading">
+          <label for="email-input" class="visually-hidden">Alamat Email</label>
+          <input type="email" id="email-input" placeholder="Masukkan email Anda" autocomplete="email" required />
+          <button type="submit" class="btn btn-sm">Gabung</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {currentYear} Guardian.Nine. Hak cipta dilindungi.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: #050505;
+    padding: 5rem 0 2rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-decoration: none;
+  }
+
+  .logo-icon {
+    height: 48px !important;
+    max-height: 48px !important;
+    width: auto !important;
+    object-fit: contain;
+    display: block;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+
+  .brand p {
+    color: var(--color-text-muted);
+    max-width: 250px;
+  }
+
+  .links h4, .newsletter h4 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+  }
+
+  .links a {
+    display: block;
+    color: var(--color-text-muted);
+    margin-bottom: 0.8rem;
+    transition: color 0.3s;
+  }
+
+  .links a:hover,
+  .links a:focus {
+    color: var(--color-primary);
+  }
+
+  .subscribe-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .subscribe-form input {
+    background: #1a1a1a;
+    border: 1px solid var(--color-border);
+    padding: 0.6rem 1rem;
+    color: #fff;
+    border-radius: 4px;
+    flex: 1;
+    min-width: 150px;
+  }
+
+  .subscribe-form input:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-color: var(--color-primary);
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #888;
+    font-size: 0.9rem;
+  }
+
+  .btn-sm {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .subscribe-form {
+      flex-direction: column;
+    }
+    
+    .btn-sm {
+      width: 100%;
+    }
+  }
+</style>

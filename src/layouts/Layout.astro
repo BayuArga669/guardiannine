@@ -1,0 +1,196 @@
+---
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Jersey performa premium untuk atlet berkinerja tinggi" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="id">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" href="/images/Logo.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+
+		<!-- SEO Meta Tags -->
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="Guardian.Nine" />
+		<link rel="canonical" href="https://guardiannine.id/" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://guardiannine.id/" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="/images/hero-bg.png" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://guardiannine.id/" />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content="/images/hero-bg.png" />
+
+		<!-- Preload Critical Resources -->
+		<link rel="preload" as="image" href="/images/hero-bg.webp" type="image/webp" />
+		
+		<!-- Google Fonts - optimized loading -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;500;700&display=swap" />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+		<noscript>
+			<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet" />
+		</noscript>
+	</head>
+	<body>
+		<a href="#main-content" class="skip-link">Langsung ke konten utama</a>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--color-bg: #0a0a0a;
+		--color-bg-secondary: #0f1216;
+		--color-primary: #ccff00;
+		--color-primary-hover: #b3e600;
+		--color-text: #ffffff;
+		--color-text-muted: #b0b0b0;
+		--color-border: #2a2a2a;
+		
+		--font-heading: 'Oswald', sans-serif;
+		--font-body: 'Inter', sans-serif;
+	}
+
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	html {
+		font-family: var(--font-body);
+		background: var(--color-bg);
+		color: var(--color-text);
+		scroll-behavior: smooth;
+	}
+
+	body {
+		min-height: 100vh;
+		overflow-x: hidden;
+		line-height: 1.6;
+	}
+
+	/* Skip Link for Accessibility */
+	.skip-link {
+		position: absolute;
+		top: -40px;
+		left: 0;
+		background: var(--color-primary);
+		color: #000;
+		padding: 8px 16px;
+		z-index: 10000;
+		font-weight: 600;
+	}
+	.skip-link:focus {
+		top: 0;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: var(--font-heading);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	/* Focus states for accessibility */
+	a:focus-visible,
+	button:focus-visible {
+		outline: 3px solid var(--color-primary);
+		outline-offset: 2px;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+		display: block;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 1.5rem;
+	}
+
+	.section-padding {
+		padding: 5rem 0;
+	}
+
+	@media (max-width: 768px) {
+		.container {
+			padding: 0 1rem;
+		}
+		.section-padding {
+			padding: 3rem 0;
+		}
+	}
+
+	.btn {
+		display: inline-block;
+		padding: 0.75rem 2rem;
+		background: var(--color-primary);
+		color: #000;
+		font-family: var(--font-heading);
+		font-weight: 700;
+		font-size: 1.1rem;
+		text-transform: uppercase;
+		transition: transform 0.2s, background 0.2s;
+		clip-path: polygon(10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 10%);
+		border: none;
+		cursor: pointer;
+	}
+
+	.btn:hover {
+		background: var(--color-primary-hover);
+		transform: translateY(-2px);
+	}
+	
+	.btn-outline {
+		background: transparent;
+		color: var(--color-primary);
+		border: 2px solid var(--color-primary);
+		clip-path: none;
+		border-radius: 4px;
+	}
+	
+	.btn-outline:hover {
+		background: rgba(204, 255, 0, 0.1);
+		color: var(--color-primary);
+	}
+
+	/* Utility */
+	.text-primary { color: var(--color-primary); }
+	.text-center { text-align: center; }
+	.uppercase { text-transform: uppercase; }
+
+	/* Reduce motion for accessibility */
+	@media (prefers-reduced-motion: reduce) {
+		*, *::before, *::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+		}
+		html {
+			scroll-behavior: auto;
+		}
+	}
+</style>

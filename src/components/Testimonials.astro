@@ -1,0 +1,129 @@
+---
+---
+<section class="testimonials section-padding" id="testimonials" aria-labelledby="testimonials-heading">
+  <div class="container">
+    <header class="section-header text-center">
+      <h2 id="testimonials-heading" class="text-primary">Kata Atlet</h2>
+      <p class="subtitle">Bergabung dengan ribuan atlet elit.</p>
+    </header>
+
+    <ul class="grid" role="list">
+      <li class="review-card" role="listitem">
+        <blockquote>
+          <p class="review-text">"Sirkulasi udaranya tak tertandingi. Saya bermain 90 menit penuh di cuaca panas dan merasa lebih ringan dari biasanya. Kualitas luar biasa."</p>
+        </blockquote>
+        <div class="reviewer">
+          <div class="avatar" aria-hidden="true">DA</div>
+          <div class="info">
+            <cite><strong>David Anderson</strong></cite>
+            <span>Striker Pro</span>
+          </div>
+        </div>
+      </li>
+
+      <li class="review-card" role="listitem">
+        <blockquote>
+          <p class="review-text">"Akhirnya jersey yang pas dengan bentuk tubuh atletis tanpa terasa sesak. Estetikanya bonus yang sangat keren."</p>
+        </blockquote>
+        <div class="reviewer">
+          <div class="avatar" aria-hidden="true">JD</div>
+          <div class="info">
+            <cite><strong>James Doe</strong></cite>
+            <span>Atlet Crossfit</span>
+          </div>
+        </div>
+      </li>
+
+      <li class="review-card" role="listitem">
+        <blockquote>
+          <p class="review-text">"Saya punya tiga seri Neon. Dicuci berkali-kali tetap sempurna, bentuk terjaga, dan selalu dapat pujian setiap kali dipakai."</p>
+        </blockquote>
+        <div class="reviewer">
+          <div class="avatar" aria-hidden="true">MR</div>
+          <div class="info">
+            <cite><strong>Marcus R.</strong></cite>
+            <span>Pesepakbola Semipro</span>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .testimonials {
+    background: var(--color-bg);
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .subtitle {
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .review-card {
+    background: var(--color-bg-secondary);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  blockquote {
+    margin: 0;
+  }
+
+  .review-text {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #d0d0d0;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+  }
+
+  .reviewer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .avatar {
+    width: 50px;
+    height: 50px;
+    background: var(--color-primary);
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    flex-shrink: 0;
+  }
+
+  cite {
+    font-style: normal;
+    display: block;
+    color: #fff;
+  }
+
+  .info span {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+</style>

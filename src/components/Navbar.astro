@@ -1,0 +1,197 @@
+---
+---
+<nav class="navbar" role="navigation" aria-label="Navigasi utama">
+  <div class="container nav-container">
+    <a href="/" class="logo" aria-label="Guardian.Nine - Beranda">
+      <img src="/images/Logo.png" alt="Guardian.Nine Logo" class="logo-icon" style="height: 48px; width: auto; max-width: 100%; object-fit: contain;" />
+      <span class="logo-text">GUARDIAN.<span class="text-primary">NINE</span></span>
+    </a>
+    
+    <div class="nav-links" role="menubar">
+      <a href="#home" role="menuitem">Beranda</a>
+      <a href="#collection" role="menuitem">Koleksi</a>
+      <a href="#features" role="menuitem">Fitur</a>
+      <a href="#testimonials" role="menuitem">Ulasan</a>
+    </div>
+
+    <a href="https://wa.me/62895803946334?text=Halo%20Kak,%20saya%20mau%20pesan%20jersey%20kustom%20dari%20web%20Guardian.Nine" class="btn btn-sm" target="_blank" rel="noopener noreferrer">Pesan Sekarang</a>
+    
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-toggle" id="mobile-menu-btn" aria-label="Buka menu navigasi" aria-expanded="false" type="button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (mobileBtn && navLinks) {
+      mobileBtn.addEventListener('click', () => {
+        const isExpanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+        mobileBtn.setAttribute('aria-expanded', String(!isExpanded));
+        mobileBtn.classList.toggle('active');
+        navLinks.classList.toggle('active');
+      });
+
+      // Close menu on link click
+      const links = navLinks.querySelectorAll('a');
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileBtn.setAttribute('aria-expanded', 'false');
+          mobileBtn.classList.remove('active');
+          navLinks.classList.remove('active');
+        });
+      });
+    }
+  });
+</script>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .logo-icon {
+    height: 48px !important;
+    max-height: 48px !important;
+    width: auto !important;
+    object-fit: contain;
+    display: block;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:focus {
+    color: var(--color-primary);
+  }
+
+  .btn-sm {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 8px;
+  }
+
+  .mobile-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #fff;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      position: absolute;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      background: rgba(10, 10, 10, 0.95);
+      flex-direction: column;
+      padding: 2rem;
+      gap: 1.5rem;
+      text-align: center;
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-links.active {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    
+    .logo-text {
+      font-size: 1.2rem;
+    }
+
+    .logo-icon {
+      height: 36px !important;
+      max-height: 36px !important;
+    }
+    
+    .btn-sm {
+      display: none;
+    }
+
+    .mobile-toggle {
+      display: flex;
+      position: relative;
+      z-index: 9999;
+      pointer-events: auto;
+    }
+
+    /* Hamburger Animation */
+    .mobile-toggle span {
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .mobile-toggle.active span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .mobile-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-toggle.active span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+</style>
